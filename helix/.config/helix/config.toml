@@ -1,0 +1,7 @@
+theme = "modus_operandi"
+
+[editor]
+line-number = "relative"
+mouse = true
+soft-wrap.enable = true
+cursor-shape.insert = "bar"

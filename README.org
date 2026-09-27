@@ -1,0 +1,14 @@
+* Configuration files (dotfiles)
+This repository contains my dotfiles for migration across different systems.
+
+** Installation
+- Ensure that [[https://www.gnu.org/software/stow/][GNU Stow]] and Git are installed on the system.
+- Clone this repository into =~/.dotfiles=.
+- Install the desired packages (the names correspond to directories in this
+  repository).
+  #+BEGIN_SRC shell
+    cd ~/.dotfiles
+    stow sway emacs
+  #+END_SRC
+- The installed files are symbolic links to this repository. Deleting or moving
+  it will break the configuration.

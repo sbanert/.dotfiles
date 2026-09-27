@@ -1,0 +1,22 @@
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[font]
+builtin_box_drawing = true
+size = 9.0
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "Iosevka Nerd Font"
+style = "Regular"
+
+[general]
+import = ["/home/banert/.config/alacritty/modus_operandi.toml"]

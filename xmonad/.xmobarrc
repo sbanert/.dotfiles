@@ -1,0 +1,45 @@
+Config { font = "Noto Sans Mono 11"
+       , additionalFonts = []
+       , bgColor = "#282828"
+       , fgColor = "#ebdbb2"
+       , alpha = 255
+       , position = TopW L 95
+       , textOffset = -1
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = True
+       , iconRoot = "."
+       , border = NoBorder
+       , commands = [ Run Date "%a %b %_d %Y (W%W) %H:%M" "date" 10
+                    , Run StdinReader
+                    , Run Memory  [ "--template" , "Mem: <used>M/<total>M"
+                                  , "--Low"      , "20"
+                                  , "--High"     , "80"
+                                  , "--low"      , "#fb4934"
+                                  , "--normal"   , "#fabd2f"
+                                  , "--high"     , "#b8bb26"
+                                  ] 10
+                    , Run Battery [ "--template" , "<acstatus>"
+                                  , "--Low"      , "10"
+                                  , "--High"     , "80"
+                                  , "--low"      , "#fb4934"
+                                  , "--normal"   , "#fabd2f"
+                                  , "--high"     , "#b8bb26"
+
+                                  , "--" -- battery specific options
+                                         -- discharging status
+                                         , "-o" , "<left>% (<timeleft>)"
+                                         -- AC "on" status
+                                         , "-O" , "<fc=#fabd2f>Charging</fc>"
+                                         -- charged status
+                                         , "-i" , "<fc=#b8bb26>Charged</fc>"
+                                  ] 50
+                    , Run Kbd     [ ("us(intl)", "US")
+                                  , ("ara", "AR")
+                                  ]
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{%battery% | %memory% | %kbd% | %date%"
+       }
