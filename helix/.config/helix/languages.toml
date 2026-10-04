@@ -1,3 +1,5 @@
 [language-server.texlab.config.texlab.build]
 onSave = true
 chktex.onEdit = true
+executable = "latexmk"
+args = ["-interaction=nonstopmode", "-synctex=1", "%f"]
